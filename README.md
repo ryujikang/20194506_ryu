@@ -4,13 +4,13 @@
 > 시스템의 상태를 전반적으로 가장 빠르게 파악 가능(CPU, Memory, Process)  
 
 * 옵션 없이($ top) 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여줌  
-![top](https://user-images.githubusercontent.com/104420236/168477277-053b1fd5-9edf-458a-bd8c-7394d14e89cf.png)
-
+<img src="https://user-images.githubusercontent.com/104420236/168477277-053b1fd5-9edf-458a-bd8c-7394d14e89cf.png" width="640" height="480">
 
 * top *실행 전* 옵션  
   * -b : 순간의 정보를 확인(batch 모드)  
   * -n : top 실행 주기 설정(반복 횟수)  
-  * ex) $ top -b -n 1  ![top -b -n 1](https://user-images.githubusercontent.com/104420236/168477552-fe33576d-d712-4fa3-a6c9-0aa0171d1d91.png)
+  * ex) $ top -b -n 1  
+   <img src="https://user-images.githubusercontent.com/104420236/168477552-fe33576d-d712-4fa3-a6c9-0aa0171d1d91.png" width="640" height="480">
 
   
 * top *실행 후* 명령어
@@ -36,7 +36,7 @@
 > * TIME (CPU 점유시간)  
 > * CMD (프로세스가 수행된 명령어)  
 
-![ps](https://user-images.githubusercontent.com/104420236/168513161-2077edc5-dcd7-41fb-9e84-da1daea3edde.png)
+<img src="https://user-images.githubusercontent.com/104420236/168513161-2077edc5-dcd7-41fb-9e84-da1daea3edde.png" width="640" height="480">
 
 
 
@@ -58,7 +58,7 @@
 * format 정리표  
 
 |CODE|NORAML|HEADER|
-|:---:|:------:|:-----:|
+|:---:|:------|:-----|
 |%C|pcpu|%CPU|
 |%G|group|GROUP|
 |%P|ppid|PPID|
@@ -87,7 +87,7 @@
 * 옵션  
 
 |Option|Explanation|
-|:---:|:---:|
+|:---:|:---|
 |-l|프로세스 그룹 ID를 state 필드 앞에 출력|
 |-n|프로세스 그룹 중에 대표 프로세스 ID를 출력|
 |-p|각 프로세스 ID에 대해 한 행씩 출력|
@@ -97,7 +97,7 @@
 * jobs로 알 수 있는 세션의 상태 값  
 
 |Status|Explanation|
-|:---:|:---:|
+|:---:|:---|
 |Running|작업이 일시 중단되지 않았고 종료하지 않고 계속 진행 중임|
 |Done|작업이 완료되어 0을 반환하고 종료 했음을 의미|
 |Done(code)|작업이 정삭적으로 완료되었으며, 0이 아닌 코드를 반환 했음을 의미|
@@ -119,7 +119,7 @@
   * > $ kill -9 1234  
   * > $ kill -SIGKILL 1234  
 
-![kill -l](https://user-images.githubusercontent.com/104420236/168520288-a3bc9c4d-7267-4107-99a6-a01ee77046e9.png)
+<img src="https://user-images.githubusercontent.com/104420236/168520288-a3bc9c4d-7267-4107-99a6-a01ee77046e9.png" width="640" height="480">
 
 
 
