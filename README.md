@@ -1,15 +1,15 @@
 # 명령어(top, ps, jobs, kill)
 ---
-## top
+## `top`
 > 시스템의 상태를 전반적으로 가장 빠르게 파악 가능(CPU, Memory, Process)  
 
-* 옵션 없이($ top) 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여줌  
+* 옵션 없이($ `top`) 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여줌  
 <img src="https://user-images.githubusercontent.com/104420236/168477277-053b1fd5-9edf-458a-bd8c-7394d14e89cf.png" width="640" height="480">
 
 * top *실행 전* 옵션  
   * -b : 순간의 정보를 확인(batch 모드)  
   * -n : top 실행 주기 설정(반복 횟수)  
-  * ex) $ top -b -n 1  
+  * ex) $ `top -b -n 1`  
    <img src="https://user-images.githubusercontent.com/104420236/168477552-fe33576d-d712-4fa3-a6c9-0aa0171d1d91.png" width="640" height="480">
 
   
@@ -24,12 +24,12 @@
   * 1 : CPU Core별로 사용량 보여줌
   * h : 도움말
   
-* ps와 top의 차이점  
-  * ps : ps한 시점에 proc에서 검색한 cpu 사용량
-  * top : proc에서 일정 주기로 합산해 cpu 사용률 출력
+* `ps`와 `top`의 차이점  
+  * `ps` : ps한 시점에 proc에서 검색한 cpu 사용량
+  * `top` : proc에서 일정 주기로 합산해 cpu 사용률 출력
 ---
 
-## ps
+## `ps`
 > (Process Status)현재 돌아가고 있는 프로세스를 확인할 수 있는 명령어  
 > * PID (프로세스 ID)  
 > * TTY (터미널 번호)  
@@ -76,24 +76,24 @@
 |%y|tty|TTY|
 |%z|vsz|VSZ|
 
-* ps | grep <option>
+* `ps | grep <option>`
   * 원하는 프로세스만 추출  
 <img src="https://user-images.githubusercontent.com/104420236/170738534-e4741c22-f695-4427-b3ce-cdbf3405037c.png" width="640" height="480">
 
 
-* ps -ejH  
+* `ps -ejH`  
   * 프로세스를 트리 형태로 조금 보기 좋게 표시. 자식 트리면 CMD가 한칸 띄어져서 출력  
 <img src="https://user-images.githubusercontent.com/104420236/170737396-f30394fd-aaf9-4ab1-8574-6df6ff14d7cf.png" width="640" height="480">
 
-* pstree  
-  * ps -ejH보다 pstree 명령이 더 보기 좋음. 이 트리는 기본적으로 init 혹은 systemd 프로세스가 루트인데, 만약 pid를 명시한다면 그 pid가 루트가 됨  
+* `pstree`  
+  * `ps -ejH`보다 `pstree` 명령이 더 보기 좋음. 이 트리는 기본적으로 init 혹은 systemd 프로세스가 루트인데, 만약 pid를 명시한다면 그 pid가 루트가 됨  
 <img src="https://user-images.githubusercontent.com/104420236/170737495-b48778cb-0f28-4fbe-9490-b301c055437f.png" width="640" height="480">
 
 
 ---
-## jobs
+## `jobs`
 > 백그라운드로 실행되는 작업목록(작업번호, 상태, 명령어)을 보여주는 명령어  
-> $ jobs \[Option\] \[job ID\]
+> $ `jobs [Option] [job ID]`
 
 
 * 옵션  
@@ -121,35 +121,33 @@
 
 
 ---
-## kill
+## `kill`
 > 프로세스에 특정한 시그널(signal)을 보내는 명령어  
 > 일반적으로 종료되지 않는 프로세스를 종료 시킬 때 많이 사용  
 
  
-* kill -l : signal의 종류를 출력  
-  * > kill \[Otion or signal(number or name)\] PID  
-  * > $ kill -9 1234  
-  * > $ kill -SIGKILL 1234  
+* `kill -l` : signal의 종류를 출력  
+  * > `kill [Otion or signal(number or name)] PID`  
+  ex) $ `kill -9 1234`  >> 보통 -1(-HUP, 프로세스 재활성화)와 -9(-kill, 프로세스 강제 종료)를 많이 씀  
+  ex) $ `kill -SIGKILL 1234`  
 
 <img src="https://user-images.githubusercontent.com/104420236/168520288-a3bc9c4d-7267-4107-99a6-a01ee77046e9.png" width="640" height="480">
-
-
 
 
 ---
 
 # 매크로(Vim Editor - macro)
 > 특정한 움직임 또는 입력을 키에 저장함으로써 단순하면서 반복되는 동작을 쉽고 빠르게 해주는 것  
-> vim 명령어모드 -> q + key(알파벳) : 특정 알파벳(key)에 매크로를 저장  
+> vim 명령어모드 -> `q + key(알파벳)` : 특정 알파벳(key)에 매크로를 저장  
 
 
 * 매크로(macro) 사용순서
- 1) q + a : a키에 recording 시작
+ 1) `q + a` : a키에 recording 시작
  2) 자신이 원하는 반복 동작
- 3) q : recording 종료
- 4) 1) @a : 1회 실행
-    2) @@ : 방금 실행한 매크로 실행
-    3) 10@a : 매크로 10회 실행
+ 3) `q` : recording 종료
+ 4) 1) `@a` : 1회 실행
+    2) `@@` : 방금 실행한 매크로 실행
+    3) `10@a` : 매크로 10회 실행
 
 
 * 매크로 응용(숫자 증가)
