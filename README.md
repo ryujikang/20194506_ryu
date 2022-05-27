@@ -22,7 +22,7 @@
   * a : 메모리 사용량에 따라 정렬
   * b : Batch 모드로 작동
   * 1 : CPU Core별로 사용량 보여줌
-
+  * h : 도움말
   
 * ps와 top의 차이점  
   * ps : ps한 시점에 proc에서 검색한 cpu 사용량
@@ -49,6 +49,7 @@
 * 옵션
   * -e, -A : 실행중인 모든 프로세스의 정보를 출력
   * -f : 프로세스에 대한 자세한 정보를 출력(PPID확인 가능)
+  * -ef : 모든 프로세스를 full format으로 보여줌(-e와 -f의 조합)
   * -u \[사용자이름\] : 특정 사용자에 대한 모든 프로세스의 정보를 출력
   * -p pid : pid로 지정한 프로세스의 정보를 출력
   * u : 프로세스 소유자의 이름, CPU 사용량, 메모리 사용량 등 상세 정보를 출력
@@ -75,7 +76,18 @@
 |%y|tty|TTY|
 |%z|vsz|VSZ|
 
+* ps | grep <option>
+  * 원하는 프로세스만 추출  
+<img src="https://user-images.githubusercontent.com/104420236/170738534-e4741c22-f695-4427-b3ce-cdbf3405037c.png" width="640" height="480">
 
+
+* ps -ejH  
+  * 프로세스를 트리 형태로 조금 보기 좋게 표시. 자식 트리면 CMD가 한칸 띄어져서 출력  
+<img src="https://user-images.githubusercontent.com/104420236/170737396-f30394fd-aaf9-4ab1-8574-6df6ff14d7cf.png" width="640" height="480">
+
+* pstree  
+  * ps -ejH보다 pstree 명령이 더 보기 좋음. 이 트리는 기본적으로 init 혹은 systemd 프로세스가 루트인데, 만약 pid를 명시한다면 그 pid가 루트가 됨  
+<img src="https://user-images.githubusercontent.com/104420236/170737495-b48778cb-0f28-4fbe-9490-b301c055437f.png" width="640" height="480">
 
 
 ---
